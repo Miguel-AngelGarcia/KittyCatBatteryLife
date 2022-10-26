@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
+
 /*
 func getKitty(batteryLife):
     switch happyLevel {
@@ -37,6 +38,78 @@ func getKitty(batteryLife):
         
     }
 */
+class BatteryViewModel: ObservableObject {
+    @Published var batteryLevel: Float = 0
+    @Published var batteryStateCatFeeling: String = ""
+    @Published var batteryStateCat: Color = .mint
+    
+    init () {
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        self.batteryLevel = Float(UIDevice.current.batteryLevel * 100)
+        setBatteryState()
+        
+        //notifications observers
+        NotificationCenter.default.addObserver(self, selector: #selector(batteryLevelDidChange(notification:)), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(batteryStateDidChange(notification:)), name: UIDevice.batteryStateDidChangeNotification, object: nil)
+    }
+    
+
+    @objc func batteryLevelDidChange(notification: Notification) {
+        self.batteryLevel = Float(UIDevice.current.batteryLevel * 100)
+    }
+    
+    @objc func batteryStateDidChange(notification: Notification) {
+        setBatteryState()
+    }
+    
+    private func setBatteryState() {
+        let batteryState = UIDevice.current.batteryState
+        self.batteryStateCat = getBatteryStateCat(for: batteryState)
+        self.batteryStateCatFeeling = getBatteryCatFeeling(for: batteryState)
+    }
+    
+    private func getBatteryStateCat(for state: UIDevice.BatteryState) -> Color{
+        switch state {
+        case .charging:
+            return .green
+            
+        case .full:
+            return .blue
+        
+        case .unplugged:
+            return .gray
+            
+        case .unknown:
+            return .mint
+            
+        @unknown default:
+            return .mint
+        }
+    }
+    
+    private func getBatteryCatFeeling(for state: UIDevice.BatteryState) -> String{
+        switch state{
+        case .charging:
+            return "resting kitty cat"
+            
+        case .full:
+            return "full kitty cat"
+        
+        case .unplugged:
+            return "out on the town kitty cat"
+        
+        case .unknown:
+            return "who knows where the cat is?"
+        
+        @unknown default:
+            return "who knows where the cat is?"
+        }
+    }
+    
+}
+
+
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
@@ -69,6 +142,8 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct KittyCatEntryView : View {
+    @ObservedObject private var batteryViewModelLevel = BatteryViewModel()
+    
     @Environment(\.widgetFamily) var widgetFamily
     var entry: Provider.Entry
 
@@ -78,7 +153,11 @@ struct KittyCatEntryView : View {
                 //UIImage()
             //case.accessoryRectangular:
             
-            //case.accessoryCircular:
+            case.accessoryCircular:
+            Gauge(value: batteryViewModelLevel.batteryLevel){
+                
+            }
+            .gaugeStyle(.accessoryCircular)
             
         default:
             Text("Not There Yet")
@@ -97,7 +176,8 @@ struct KittyCat: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.accessoryInline, .accessoryCircular, .accessoryRectangular])
+        //.supportedFamilies([.accessoryInline, .accessoryCircular, .accessoryRectangular])
+        .supportedFamilies([.accessoryCircular])
     }
 }
 

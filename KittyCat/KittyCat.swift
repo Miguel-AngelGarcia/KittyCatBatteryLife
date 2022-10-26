@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
-
+/*
 func getKitty(batteryLife):
     switch happyLevel {
         case.batterLife >= 80:
@@ -36,7 +36,7 @@ func getKitty(batteryLife):
         
         
     }
-
+*/
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
@@ -74,11 +74,11 @@ struct KittyCatEntryView : View {
 
     var body: some View {
         switch widgetFamily {
-            case.accessoryInline:
-                UIImage()
-            case.accessoryRectangular:
+            //case.accessoryInline:
+                //UIImage()
+            //case.accessoryRectangular:
             
-            case.accessoryCircular:
+            //case.accessoryCircular:
             
         default:
             Text("Not There Yet")

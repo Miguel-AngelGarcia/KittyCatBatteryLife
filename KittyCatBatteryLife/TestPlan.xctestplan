@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "1F4D2B33-DBAB-4CB7-8BFB-6B80B2C3EFFA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:KittyCatBatteryLife.xcodeproj",
+        "identifier" : "B970EF792908C7C300A98EB5",
+        "name" : "KittyCatBatteryLifeTests"
+      }
+    }
+  ],
+  "version" : 1
+}

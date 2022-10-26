@@ -79,6 +79,8 @@
 		B970EFA42908C84500A98EB5 /* KittyCat.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = KittyCat.intentdefinition; sourceTree = "<group>"; };
 		B970EFA52908C84500A98EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B970EFA72908C84500A98EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B970EFB12909939000A98EB5 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		B970EFB329099CAB00A98EB5 /* KittyCatExtension.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KittyCatExtension.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,8 @@
 			children = (
 				B970EF6D2908C7C200A98EB5 /* KittyCatBatteryLifeApp.swift */,
 				B970EF6F2908C7C200A98EB5 /* ContentView.swift */,
+				B970EFB12909939000A98EB5 /* TestPlan.xctestplan */,
+				B970EFB329099CAB00A98EB5 /* KittyCatExtension.xctestplan */,
 				B970EF712908C7C300A98EB5 /* Assets.xcassets */,
 				B970EF732908C7C300A98EB5 /* Preview Content */,
 			);
@@ -531,6 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KittyCatBatteryLife/Preview Content\"";
+				DEVELOPMENT_TEAM = M2NWU6SH8P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -560,6 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KittyCatBatteryLife/Preview Content\"";
+				DEVELOPMENT_TEAM = M2NWU6SH8P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

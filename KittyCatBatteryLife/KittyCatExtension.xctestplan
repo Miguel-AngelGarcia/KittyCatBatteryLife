@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "2E348EF7-E1E9-43C6-9AC2-9EDAE8B2A4AF",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "environmentVariableEntries" : [
+      {
+        "enabled" : false,
+        "key" : "_XCWidgetKind",
+        "value" : ""
+      },
+      {
+        "enabled" : false,
+        "key" : "_XCWidgetDefaultView",
+        "value" : "timeline"
+      },
+      {
+        "enabled" : false,
+        "key" : "_XCWidgetFamily",
+        "value" : "medium"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:KittyCatBatteryLife.xcodeproj",
+      "identifier" : "B970EF692908C7C200A98EB5",
+      "name" : "KittyCatBatteryLife"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

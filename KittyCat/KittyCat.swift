@@ -38,14 +38,21 @@ func getKitty(batteryLife):
         
     }
 */
+
+
+
 class BatteryViewModel: ObservableObject {
     @Published var batteryLevel: Float = 0
     @Published var batteryStateCatFeeling: String = ""
     @Published var batteryStateCat: Color = .mint
+    @Published var kittyCat: String = ""
     
     init () {
         UIDevice.current.isBatteryMonitoringEnabled = true
-        self.batteryLevel = Float(UIDevice.current.batteryLevel * 100)
+        //self.batteryLevel = Float(UIDevice.current.batteryLevel * 100)
+        self.batteryLevel = 0.19
+        self.kittyCat = getKittyCat(percentage: batteryLevel)
+        //self.kittyCat = "Alan"
         setBatteryState()
         
         //notifications observers
@@ -91,7 +98,7 @@ class BatteryViewModel: ObservableObject {
     private func getBatteryCatFeeling(for state: UIDevice.BatteryState) -> String{
         switch state{
         case .charging:
-            return "resting kitty cat"
+            return "resting"
             
         case .full:
             return "full kitty cat"
@@ -100,12 +107,39 @@ class BatteryViewModel: ObservableObject {
             return "out on the town kitty cat"
         
         case .unknown:
-            return "who knows where the cat is?"
+            return "???"
         
         @unknown default:
-            return "who knows where the cat is?"
+            return "???"
         }
     }
+    
+    private func getKittyCat(percentage: Float) -> String {
+            let percentage = round(percentage * 100) / 100.0
+            switch percentage{
+                
+            case 0.80...0.99:
+                return "Casa"
+                
+            case 0.60...0.79:
+                return "Alan"
+                
+            case 0.40...0.59:
+                return "Cal"
+                
+            case 0.20...0.39:
+                return "Independants"
+                
+            case 0.06...0.19:
+                return "1st"
+                
+            case 0.00...0.05:
+                return "dramatic"
+                        
+            default:
+                return "idk"
+            }
+        }
     
 }
 
@@ -152,12 +186,29 @@ struct KittyCatEntryView : View {
             //case.accessoryInline:
                 //UIImage()
             //case.accessoryRectangular:
+        case .accessoryRectangular, .systemSmall:
+                        HStack {
+                            VStack {
+                                    Text("Rectangular")
+                                        .font(.system(size: 14))
+                            }
+                            
+                            Image(batteryViewModelLevel.kittyCat)
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                                .aspectRatio(contentMode: .fit)
+                        }
             
-            case.accessoryCircular:
-            Gauge(value: batteryViewModelLevel.batteryLevel){
-                
+        case.accessoryCircular:
+            VStack{
+                Gauge(value: batteryViewModelLevel.batteryLevel){
+                    Image(batteryViewModelLevel.kittyCat)
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                        //aspectRatio(contentMode: .fit)
+                }
+                .gaugeStyle(.accessoryCircularCapacity)
             }
-            .gaugeStyle(.accessoryCircular)
             
         default:
             Text("Not There Yet")

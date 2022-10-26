@@ -14,6 +14,13 @@
 		B970EF7F2908C7C300A98EB5 /* KittyCatBatteryLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970EF7E2908C7C300A98EB5 /* KittyCatBatteryLifeTests.swift */; };
 		B970EF892908C7C300A98EB5 /* KittyCatBatteryLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970EF882908C7C300A98EB5 /* KittyCatBatteryLifeUITests.swift */; };
 		B970EF8B2908C7C300A98EB5 /* KittyCatBatteryLifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970EF8A2908C7C300A98EB5 /* KittyCatBatteryLifeUITestsLaunchTests.swift */; };
+		B970EF9E2908C84500A98EB5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B970EF9D2908C84500A98EB5 /* WidgetKit.framework */; };
+		B970EFA02908C84500A98EB5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B970EF9F2908C84500A98EB5 /* SwiftUI.framework */; };
+		B970EFA32908C84500A98EB5 /* KittyCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970EFA22908C84500A98EB5 /* KittyCat.swift */; };
+		B970EFA62908C84500A98EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B970EFA52908C84500A98EB5 /* Assets.xcassets */; };
+		B970EFA82908C84500A98EB5 /* KittyCat.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B970EFA42908C84500A98EB5 /* KittyCat.intentdefinition */; };
+		B970EFA92908C84500A98EB5 /* KittyCat.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B970EFA42908C84500A98EB5 /* KittyCat.intentdefinition */; };
+		B970EFAC2908C84500A98EB5 /* KittyCatExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B970EF9B2908C84500A98EB5 /* KittyCatExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,28 @@
 			remoteGlobalIDString = B970EF692908C7C200A98EB5;
 			remoteInfo = KittyCatBatteryLife;
 		};
+		B970EFAA2908C84500A98EB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B970EF622908C7C200A98EB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B970EF9A2908C84500A98EB5;
+			remoteInfo = KittyCatExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B970EFB02908C84600A98EB5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B970EFAC2908C84500A98EB5 /* KittyCatExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B970EF6A2908C7C200A98EB5 /* KittyCatBatteryLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittyCatBatteryLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +72,13 @@
 		B970EF842908C7C300A98EB5 /* KittyCatBatteryLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KittyCatBatteryLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B970EF882908C7C300A98EB5 /* KittyCatBatteryLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittyCatBatteryLifeUITests.swift; sourceTree = "<group>"; };
 		B970EF8A2908C7C300A98EB5 /* KittyCatBatteryLifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittyCatBatteryLifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B970EF9B2908C84500A98EB5 /* KittyCatExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KittyCatExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B970EF9D2908C84500A98EB5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B970EF9F2908C84500A98EB5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B970EFA22908C84500A98EB5 /* KittyCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittyCat.swift; sourceTree = "<group>"; };
+		B970EFA42908C84500A98EB5 /* KittyCat.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = KittyCat.intentdefinition; sourceTree = "<group>"; };
+		B970EFA52908C84500A98EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B970EFA72908C84500A98EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +103,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B970EF982908C84500A98EB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B970EFA02908C84500A98EB5 /* SwiftUI.framework in Frameworks */,
+				B970EF9E2908C84500A98EB5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +121,8 @@
 				B970EF6C2908C7C200A98EB5 /* KittyCatBatteryLife */,
 				B970EF7D2908C7C300A98EB5 /* KittyCatBatteryLifeTests */,
 				B970EF872908C7C300A98EB5 /* KittyCatBatteryLifeUITests */,
+				B970EFA12908C84500A98EB5 /* KittyCat */,
+				B970EF9C2908C84500A98EB5 /* Frameworks */,
 				B970EF6B2908C7C200A98EB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +133,7 @@
 				B970EF6A2908C7C200A98EB5 /* KittyCatBatteryLife.app */,
 				B970EF7A2908C7C300A98EB5 /* KittyCatBatteryLifeTests.xctest */,
 				B970EF842908C7C300A98EB5 /* KittyCatBatteryLifeUITests.xctest */,
+				B970EF9B2908C84500A98EB5 /* KittyCatExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +174,26 @@
 			path = KittyCatBatteryLifeUITests;
 			sourceTree = "<group>";
 		};
+		B970EF9C2908C84500A98EB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B970EF9D2908C84500A98EB5 /* WidgetKit.framework */,
+				B970EF9F2908C84500A98EB5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B970EFA12908C84500A98EB5 /* KittyCat */ = {
+			isa = PBXGroup;
+			children = (
+				B970EFA22908C84500A98EB5 /* KittyCat.swift */,
+				B970EFA42908C84500A98EB5 /* KittyCat.intentdefinition */,
+				B970EFA52908C84500A98EB5 /* Assets.xcassets */,
+				B970EFA72908C84500A98EB5 /* Info.plist */,
+			);
+			path = KittyCat;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,10 +204,12 @@
 				B970EF662908C7C200A98EB5 /* Sources */,
 				B970EF672908C7C200A98EB5 /* Frameworks */,
 				B970EF682908C7C200A98EB5 /* Resources */,
+				B970EFB02908C84600A98EB5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B970EFAB2908C84500A98EB5 /* PBXTargetDependency */,
 			);
 			name = KittyCatBatteryLife;
 			productName = KittyCatBatteryLife;
@@ -183,6 +252,23 @@
 			productReference = B970EF842908C7C300A98EB5 /* KittyCatBatteryLifeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B970EF9A2908C84500A98EB5 /* KittyCatExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B970EFAD2908C84600A98EB5 /* Build configuration list for PBXNativeTarget "KittyCatExtension" */;
+			buildPhases = (
+				B970EF972908C84500A98EB5 /* Sources */,
+				B970EF982908C84500A98EB5 /* Frameworks */,
+				B970EF992908C84500A98EB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KittyCatExtension;
+			productName = KittyCatExtension;
+			productReference = B970EF9B2908C84500A98EB5 /* KittyCatExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +290,9 @@
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = B970EF692908C7C200A98EB5;
 					};
+					B970EF9A2908C84500A98EB5 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 				};
 			};
 			buildConfigurationList = B970EF652908C7C200A98EB5 /* Build configuration list for PBXProject "KittyCatBatteryLife" */;
@@ -222,6 +311,7 @@
 				B970EF692908C7C200A98EB5 /* KittyCatBatteryLife */,
 				B970EF792908C7C300A98EB5 /* KittyCatBatteryLifeTests */,
 				B970EF832908C7C300A98EB5 /* KittyCatBatteryLifeUITests */,
+				B970EF9A2908C84500A98EB5 /* KittyCatExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +340,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B970EF992908C84500A98EB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B970EFA62908C84500A98EB5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,6 +357,7 @@
 			files = (
 				B970EF702908C7C200A98EB5 /* ContentView.swift in Sources */,
 				B970EF6E2908C7C200A98EB5 /* KittyCatBatteryLifeApp.swift in Sources */,
+				B970EFA92908C84500A98EB5 /* KittyCat.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +378,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B970EF972908C84500A98EB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B970EFA32908C84500A98EB5 /* KittyCat.swift in Sources */,
+				B970EFA82908C84500A98EB5 /* KittyCat.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,6 +399,11 @@
 			isa = PBXTargetDependency;
 			target = B970EF692908C7C200A98EB5 /* KittyCatBatteryLife */;
 			targetProxy = B970EF852908C7C300A98EB5 /* PBXContainerItemProxy */;
+		};
+		B970EFAB2908C84500A98EB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B970EF9A2908C84500A98EB5 /* KittyCatExtension */;
+			targetProxy = B970EFAA2908C84500A98EB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,6 +525,7 @@
 		B970EF8F2908C7C300A98EB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +554,7 @@
 		B970EF902908C7C300A98EB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -537,6 +652,58 @@
 			};
 			name = Release;
 		};
+		B970EFAE2908C84600A98EB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KittyCat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KittyCat;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HenrySt.KittyCatBatteryLife.KittyCat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B970EFAF2908C84600A98EB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KittyCat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KittyCat;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HenrySt.KittyCatBatteryLife.KittyCat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,6 +739,15 @@
 			buildConfigurations = (
 				B970EF952908C7C300A98EB5 /* Debug */,
 				B970EF962908C7C300A98EB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B970EFAD2908C84600A98EB5 /* Build configuration list for PBXNativeTarget "KittyCatExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B970EFAE2908C84600A98EB5 /* Debug */,
+				B970EFAF2908C84600A98EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

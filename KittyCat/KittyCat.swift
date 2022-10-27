@@ -9,37 +9,6 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-/*
-func getKitty(batteryLife):
-    switch happyLevel {
-        case.batterLife >= 80:
-            //😸
-            return happy
-    case.batteryLife >= 60 & <= 79:
-            //😺
-        return fine
-    case.batteryLife >= 40 & <= 59:
-            //🥴
-        return woozy
-    case.batteryLife >= 20 & <= 39:
-            //😿
-        return crying
-    case.batteryLife >= 6 & <= 19:
-            //😾
-        return mad
-    case.batteryLife >= 0 & <= 5:
-            //😵
-        return dramatic
-    
-    //if charging, display a cat sleeping
-    //with the Zzz
-        
-        
-        
-    }
-*/
-
-
 
 class BatteryViewModel: ObservableObject {
     @Published var batteryLevel: Float = 0
@@ -50,7 +19,7 @@ class BatteryViewModel: ObservableObject {
     init () {
         UIDevice.current.isBatteryMonitoringEnabled = true
         //self.batteryLevel = Float(UIDevice.current.batteryLevel * 100)
-        self.batteryLevel = 0.19
+        self.batteryLevel = 0.65
         self.kittyCat = getKittyCat(percentage: batteryLevel)
         //self.kittyCat = "Alan"
         setBatteryState()
@@ -73,7 +42,7 @@ class BatteryViewModel: ObservableObject {
     private func setBatteryState() {
         let batteryState = UIDevice.current.batteryState
         self.batteryStateCat = getBatteryStateCat(for: batteryState)
-        self.batteryStateCatFeeling = getBatteryCatFeeling(for: batteryState)
+        
     }
     
     private func getBatteryStateCat(for state: UIDevice.BatteryState) -> Color{
@@ -92,25 +61,6 @@ class BatteryViewModel: ObservableObject {
             
         @unknown default:
             return .mint
-        }
-    }
-    
-    private func getBatteryCatFeeling(for state: UIDevice.BatteryState) -> String{
-        switch state{
-        case .charging:
-            return "resting"
-            
-        case .full:
-            return "full kitty cat"
-        
-        case .unplugged:
-            return "out on the town kitty cat"
-        
-        case .unknown:
-            return "???"
-        
-        @unknown default:
-            return "???"
         }
     }
     
@@ -189,8 +139,11 @@ struct KittyCatEntryView : View {
         case .accessoryRectangular, .systemSmall:
                         HStack {
                             VStack {
-                                    Text("Rectangular")
+                                    Text(batteryViewModelLevel.kittyCat)
                                         .font(.system(size: 14))
+                                Gauge(value: batteryViewModelLevel.batteryLevel){
+                                }
+                                .gaugeStyle(.linearCapacity)
                             }
                             
                             Image(batteryViewModelLevel.kittyCat)

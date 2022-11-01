@@ -18,8 +18,8 @@ class BatteryViewModel: ObservableObject {
     
     init () {
         UIDevice.current.isBatteryMonitoringEnabled = true
-        //self.batteryLevel = Float(UIDevice.current.batteryLevel)
-        self.batteryLevel = 0.85
+        self.batteryLevel = Float(UIDevice.current.batteryLevel)
+        //self.batteryLevel = 0.19
         self.kittyCat = getKittyCat(percentage: batteryLevel)
         //self.kittyCat = "Alan"
         setBatteryState()
@@ -68,23 +68,17 @@ class BatteryViewModel: ObservableObject {
             let percentage = round(percentage * 100) / 100.0
             switch percentage{
                 
-            case 0.80...0.99:
-                return "Tato2"
+            case 0.80...1.00:
+                return "TatoHappy"
                 
-            case 0.60...0.79:
+            case 0.50...0.79:
                 return "TatoFine"
                 
-            case 0.40...0.59:
-                return "Cal"
+            case 0.20...0.49:
+                return "TatoSad"
                 
-            case 0.20...0.39:
-                return "Independants"
-                
-            case 0.06...0.19:
-                return "1st"
-                
-            case 0.00...0.05:
-                return "dramatic"
+            case 0.00...0.19:
+                return "TatoDramatic"
                         
             default:
                 return "idk"
@@ -158,7 +152,9 @@ struct KittyCatEntryView : View {
                     Image(batteryViewModelLevel.kittyCat)
                         .resizable()
                         .frame(width: 40, height: 40)
-                        //aspectRatio(contentMode: .fit)
+                        .position(x:24, y:16)
+                        //.aspectRatio(contentMode: .fit)
+                        
                 }
                 .gaugeStyle(.accessoryCircularCapacity)
             }
@@ -178,8 +174,8 @@ struct KittyCat: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             KittyCatEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("TatoBatteryLifeTeller")
+        .description("Tato is here to express your battery levels.")
         //.supportedFamilies([.accessoryInline, .accessoryCircular, .accessoryRectangular])
         .supportedFamilies([.accessoryCircular])
     }
@@ -187,9 +183,6 @@ struct KittyCat: Widget {
 
 struct KittyCat_Previews: PreviewProvider {
     static var previews: some View {
-        KittyCatEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .accessoryInline))
-            .previewDisplayName("Inline")
         
         KittyCatEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))

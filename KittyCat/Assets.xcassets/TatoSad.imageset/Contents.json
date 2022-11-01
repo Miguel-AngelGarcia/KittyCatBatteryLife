@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ta2.png",
+      "filename" : "TatoSad.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Ta2 1.png",
+      "filename" : "TatoSad 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Ta2 2.png",
+      "filename" : "TatoSad 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

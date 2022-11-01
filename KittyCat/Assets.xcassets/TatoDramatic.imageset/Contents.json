@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ta2.png",
+      "filename" : "dramatic.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Ta2 1.png",
+      "filename" : "dramatic 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Ta2 2.png",
+      "filename" : "dramatic 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

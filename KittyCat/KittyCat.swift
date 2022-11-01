@@ -18,8 +18,8 @@ class BatteryViewModel: ObservableObject {
     
     init () {
         UIDevice.current.isBatteryMonitoringEnabled = true
-        //self.batteryLevel = Float(UIDevice.current.batteryLevel * 100)
-        self.batteryLevel = 0.65
+        //self.batteryLevel = Float(UIDevice.current.batteryLevel)
+        self.batteryLevel = 0.85
         self.kittyCat = getKittyCat(percentage: batteryLevel)
         //self.kittyCat = "Alan"
         setBatteryState()
@@ -69,10 +69,10 @@ class BatteryViewModel: ObservableObject {
             switch percentage{
                 
             case 0.80...0.99:
-                return "Casa"
+                return "Tato2"
                 
             case 0.60...0.79:
-                return "Alan"
+                return "TatoFine"
                 
             case 0.40...0.59:
                 return "Cal"
@@ -149,7 +149,7 @@ struct KittyCatEntryView : View {
                             Image(batteryViewModelLevel.kittyCat)
                                 .resizable()
                                 .frame(width: 60, height: 60)
-                                .aspectRatio(contentMode: .fit)
+                                //.aspectRatio(contentMode: .fit)
                         }
             
         case.accessoryCircular:
@@ -157,7 +157,7 @@ struct KittyCatEntryView : View {
                 Gauge(value: batteryViewModelLevel.batteryLevel){
                     Image(batteryViewModelLevel.kittyCat)
                         .resizable()
-                        .frame(width: 60, height: 60)
+                        .frame(width: 40, height: 40)
                         //aspectRatio(contentMode: .fit)
                 }
                 .gaugeStyle(.accessoryCircularCapacity)
